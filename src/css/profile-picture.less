@@ -1,0 +1,25 @@
+@normal: 85px;
+@small: 40px;
+
+.profile-picture {
+  width: @normal;
+  height: @normal;
+  border-radius: 4px;
+  display: inline-block;
+  overflow: hidden;
+
+  img {
+    vertical-align: bottom;
+    width: @normal;
+    height: @normal;
+  }
+
+  &.small {
+    width: @small;
+    height: @small;
+    img {
+      width: @small;
+      height: @small;
+    }
+  }
+}
