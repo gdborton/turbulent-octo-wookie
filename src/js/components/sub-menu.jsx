@@ -14,9 +14,10 @@ var SubMenu = React.createClass({
     onTabClick: React.PropTypes.func.isRequired,
     onButtonClick: React.PropTypes.func.isRequired
   },
+
   render() {
-    var tabs = this.props.tabs.map(function(tab, index) {
-      return <div className={'tab' + (tab.isActive ? ' active' : '')} key={index}>{tab.title}</div>;
+    var tabs = this.props.tabs.map((tab, index) => {
+      return <div className={'tab' + (tab.isActive ? ' active' : '')} key={index} onClick={this._handleTabClick.bind(this, tab)}>{tab.title}</div>;
     });
 
     return (
@@ -24,6 +25,9 @@ var SubMenu = React.createClass({
         {tabs}
       </div>
     );
+  },
+  _handleTabClick(tab) {
+    this.props.onTabClick(tab.value);
   }
 });
 

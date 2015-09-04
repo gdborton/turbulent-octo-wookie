@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 0,
-    author: 'Same Soffes',
+    author: 'Sam Soffes',
     content: 'How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc \n Good stuff from @designmodo!',
     type: 'post'
   },
