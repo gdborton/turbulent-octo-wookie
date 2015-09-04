@@ -1,0 +1,28 @@
+@import (reference) 'variables.less';
+
+.button(){
+  cursor: pointer;
+}
+
+.on-your-mind {
+  width: 100%;
+  padding: 40px;
+  border-radius: 3px;
+  background-color: rgb(0, 178, 134);
+  opacity: 0.702;
+  color: rgba(255, 255, 255, .5);
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .add-photo {
+    margin-right: 44px;
+    display: inline-block;
+    .button;
+  }
+
+  .add-video {
+    .button;
+  }
+}

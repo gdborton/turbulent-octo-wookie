@@ -4,7 +4,9 @@ var Hero = React.createClass({
   render() {
     return (
       <div className="hero">
-        {this.props.children}
+        <div className="container small">
+          {this.props.children}
+        </div>
       </div>
     );
   }

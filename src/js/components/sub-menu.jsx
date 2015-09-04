@@ -15,9 +15,13 @@ var SubMenu = React.createClass({
     onButtonClick: React.PropTypes.func.isRequired
   },
   render() {
+    var tabs = this.props.tabs.map(function(tab, index) {
+      return <div className={'tab' + (tab.isActive ? ' active' : '')} key={index}>{tab.title}</div>;
+    });
+
     return (
-      <div>
-        {this.props.textItems}
+      <div className={'sub-menu'}>
+        {tabs}
       </div>
     );
   }
