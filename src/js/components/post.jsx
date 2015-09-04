@@ -21,6 +21,15 @@ var Post = React.createClass({
       }
     });
 
+    var media;
+    if (this.props.post.hasPhoto || this.props.post.hasVideo) {
+      media = (
+        <div className="media-container">
+          <img src="http://lorempixel.com/975/580"/>
+        </div>
+      );
+    }
+
     return (
       <div className="post">
           <div className="primary-content">
@@ -35,6 +44,7 @@ var Post = React.createClass({
               <span className="content">{content}</span>
             </div>
           </div>
+          {media}
       </div>
     );
   }
