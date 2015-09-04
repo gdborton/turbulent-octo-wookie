@@ -5,14 +5,14 @@ var NewMessageModal = React.createClass({
   render() {
     return (
       <Modal onClose={this.props.onClose}>
-        <div className='new-message'>
+        <div className='new-message-container'>
           <div>Create new message</div>
           <textarea rows={3}></textarea>
-        </div>
-        <div>
-          Add Photo
-          Add Video
-          <button onClick={this.props.onClose}>Post</button>
+          <div>
+            Add Photo
+            Add Video
+            <button onClick={this.props.onClose}>Post</button>
+          </div>
         </div>
       </Modal>
     );
