@@ -1,0 +1,17 @@
+@import (less) 'variables.less';
+
+button {
+  border-radius: 3px;
+  background-color: @slightly-darker-brand;
+  background-color: rgb(0, 178, 134);
+  padding: 8px 22px;
+  color: white;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: darken(@slightly-darker-brand, 10%);
+  }
+}
