@@ -36,7 +36,9 @@ var App = React.createClass({
           <OnYourMind/>
           <SubMenu tabs={tabs}/>
         </Hero>
-        <Posts posts={this.state.posts}/>
+        <div className="container small">
+          <Posts posts={this.state.posts}/>
+        </div>
       </div>
     );
   }

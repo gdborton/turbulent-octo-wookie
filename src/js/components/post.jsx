@@ -32,7 +32,7 @@ var Post = React.createClass({
                 <span className="author">{this.props.post.author}</span>
                 <button>pretend this is a button</button>
               </div>
-              <span>{content}</span>
+              <span className="content">{content}</span>
             </div>
           </div>
       </div>
