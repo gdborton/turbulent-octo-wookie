@@ -14,7 +14,7 @@ var OnYourMind = React.createClass({
     );
   },
   _handleKeyPress(event) {
-    if (event.which === 13) {
+    if (event.which === 13 && event.target.value) {
       postActions.addPost(event.target.value);
       event.target.value = '';
     }
