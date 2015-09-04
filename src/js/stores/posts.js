@@ -26,7 +26,8 @@ appDispatcher.register(payload => {
         id: _posts.length + 1,
         author: 'Me',
         content: action.data,
-        type: 'post'
+        type: 'post',
+        hasPhoto: action.data.indexOf('instagram.com') !== -1 ? true : false // This isn't great, but it makes for a better fake experience.
       });
       store.emit(eventConstants.CHANGE);
       break;
