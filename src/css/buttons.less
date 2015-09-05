@@ -9,6 +9,21 @@ button {
   border: none;
   cursor: pointer;
 
+  &.secondary {
+    border: 1px solid @normal-input-border-color;
+    background-color: white;
+    color: @normal-input-border-color;
+    font-size: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    &:hover {
+      background-color: white;
+    }
+    &:active {
+      background-color: white;
+    }
+  }
+
   &:focus {
     outline: none;
   }

@@ -20,8 +20,11 @@ var Settings = React.createClass({
 
           <h1>Settings</h1>
           <Section title="Account">
-            <div className="profile-picture">
-              <img src="http://lorempixel.com/85/85/people/?author=Me"/>
+            <div className="profile-picture-container">
+              <div className="profile-picture">
+                <img src="http://lorempixel.com/85/85/people/?author=Me"/>
+              </div>
+              <button className="secondary change-picture">change</button>
             </div>
             <div className="account-settings">
               <FancyInput leftContent={<span className="icon person-icon"/>} />
