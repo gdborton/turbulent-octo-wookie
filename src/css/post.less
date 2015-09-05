@@ -1,18 +1,10 @@
-.post {
-  overflow: hidden;
-  .primary-content {
-    padding: 25px;
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
+.post-primary-content {
+  padding: 25px;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
   }
-
-  * {
-    vertical-align: top;
-  }
-
   .author {
     color: #3f454d;
     margin-bottom: 5px;
@@ -23,7 +15,6 @@
   .profile-picture {
     float:left;
   }
-
   .content-body {
     float: left;
     width: 400px;
@@ -33,16 +24,23 @@
     }
   }
 
-.media-container {
-  max-height: 300px;
-  overflow: hidden;
-  width:100%;
-  >img {
-    width:100%;
-    cursor: pointer;
+  * {
+    vertical-align: top;
   }
 }
 
+.post {
+  overflow: hidden;
+
+  .media-container {
+    max-height: 300px;
+    overflow: hidden;
+    width:100%;
+    >img {
+      width:100%;
+      cursor: pointer;
+    }
+  }
 
   width: 100%;
   max-width: 575px;
@@ -51,4 +49,29 @@
 
   margin-top: 25px;
   margin-right: 25px;
+}
+
+.post-detail-modal {
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.reply {
+  background-color: #f9fafb;
+  border-top: 1px solid #eef0f2;
+  padding: 16px 25px;
+
+  input {
+    border: 1px solid #dee1e5;
+    background-color: white;
+    width: 100%;
+    border-radius: 4px;
+    padding: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #31b9ff;
+    }
+  }
 }

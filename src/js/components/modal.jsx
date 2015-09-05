@@ -5,6 +5,7 @@ var Modal = React.createClass({
     return (
       <div className="modal-backdrop" onClick={this._handleBackdropClick}>
         <div className="modal-contents">
+          <div className="close-icon" onClick={this.props.onClose}/>
           {this.props.children}
         </div>
       </div>
@@ -22,10 +23,13 @@ var appContainer = document.querySelector('body > .container');
 var MockModal = React.createClass({
   componentWillMount() {
     appContainer.className = appContainer.className + ' blur';
+    modalNode.className = modalNode.className + ' open';
+    window.scrollTo(0,0);
     React.render(<Modal onClose={this.props.onClose}>{this.props.children}</Modal>, modalNode);
   },
   componentWillUnmount() {
     appContainer.className = appContainer.className.replace(/blur/, '');
+    modalNode.className = modalNode.className.replace(/open/, '');
     modalNode.innerHTML = '';
   },
   render() {

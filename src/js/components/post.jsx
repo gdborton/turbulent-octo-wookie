@@ -1,6 +1,7 @@
 var React = require('react');
-var urlRegex = /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?/;
-urlRegex = /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+var PostDetailModal = require('./post-detail-modal');
+var PostContent = require('./post-content');
+
 var Post = React.createClass({
   propTypes: {
     post: React.PropTypes.shape({
@@ -11,42 +12,40 @@ var Post = React.createClass({
     }).isRequired
   },
 
-  render() {
-    var content = this.props.post.content.split(' ');7
-    content = content.map(function(word, index) {
-      if (urlRegex.test(word)) {
-        return <span><a href={word.indexOf('http') === -1 ? 'https://' + word : word} key={index}>{word}</a> </span>;
-      } else {
-        return word + ' ';
-      }
-    });
+  getInitialState() {
+    return {
+      showingPhotoDetail: false
+    }
+  },
 
+  render() {
     var media;
     if (this.props.post.hasPhoto || this.props.post.hasVideo) {
+      var photoUrl = 'http://lorempixel.com/975/580?' + this.props.post.id;
       media = (
         <div className="media-container">
-          <img src="http://lorempixel.com/975/580"/>
+          <img src={photoUrl} onClick={this.showPhotoDetail}/>
+          {this.state.showingPhotoDetail ? <PostDetailModal onClose={this.hidePhotoDetail} post={this.props.post} /> : null}
         </div>
       );
     }
 
     return (
       <div className="post">
-          <div className="primary-content">
-            <div className="profile-picture small">
-              <img src={"http://lorempixel.com/50/50/people/?author=" + this.props.post.author}/>
-            </div>
-            <div className="content-body">
-              <div className="post-header">
-                <span className="author">{this.props.post.author}</span>
-                <button>pretend this is a button</button>
-              </div>
-              <span className="content">{content}</span>
-            </div>
-          </div>
+          <PostContent post={this.props.post}/>
           {media}
       </div>
     );
+  },
+  showPhotoDetail() {
+    this.setState({
+      showingPhotoDetail: true
+    });
+  },
+  hidePhotoDetail() {
+    this.setState({
+      showingPhotoDetail: false
+    });
   }
 });
 
