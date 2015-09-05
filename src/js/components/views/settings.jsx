@@ -20,9 +20,14 @@ var Settings = React.createClass({
 
           <h1>Settings</h1>
           <Section title="Account">
-            <FancyInput leftContent={<span className="icon person-icon"/>} />
-            <FancyInput leftContent={<span className="icon mail-icon"/>} />
-            <FancyInput leftContent={<span className="icon lock-icon"/>} rightContent='Change' type='password'/>
+            <div className="profile-picture">
+              <img src="http://lorempixel.com/85/85/people/?author=Me"/>
+            </div>
+            <div className="account-settings">
+              <FancyInput leftContent={<span className="icon person-icon"/>} />
+              <FancyInput leftContent={<span className="icon mail-icon"/>} />
+              <FancyInput leftContent={<span className="icon lock-icon"/>} rightContent='Change' type='password'/>
+            </div>
           </Section>
           <Section title="Notifications">
             <ToggleSwitch>email me when my posts are marked as favorites</ToggleSwitch>

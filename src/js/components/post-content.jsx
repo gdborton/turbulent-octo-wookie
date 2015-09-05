@@ -16,7 +16,7 @@ var PostContent = React.createClass({
     return (
       <div className="post-primary-content">
         <div className="profile-picture small">
-          <img src={"http://lorempixel.com/50/50/people/?author=" + this.props.post.author}/>
+          <img src={"http://lorempixel.com/85/85/people/?author=" + this.props.post.author}/>
         </div>
         <div className="content-body">
           <div className="post-header">

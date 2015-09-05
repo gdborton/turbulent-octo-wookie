@@ -5,7 +5,7 @@ var Section = React.createClass({
     return (
       <section>
         <h3>{this.props.title}</h3>
-        <div>
+        <div className="clearfix">
           {this.props.children}
         </div>
       </section>
