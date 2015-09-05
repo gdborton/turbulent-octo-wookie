@@ -1,6 +1,5 @@
 var React = require('react');
 var NewMessageModal = require('./new-message-modal');
-
 var Header = React.createClass({
   getInitialState() {
     return {

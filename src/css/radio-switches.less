@@ -1,0 +1,29 @@
+@import (reference) 'variables.less';
+
+.radio-switches {
+  label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .radio {
+    height: 23px;
+    width: 23px;
+    border: 1px solid @inactive-input-color;
+    border-radius: 50%;
+    padding: 2px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin-right: 25px;
+
+    .radio-inner {
+      border-radius: 50%;
+      height: 100%; width: 100%;
+      &.checked {
+        background-color: @normal-input-color;
+      }
+    }
+  }
+}

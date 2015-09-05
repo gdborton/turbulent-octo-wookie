@@ -8,9 +8,12 @@ var ToggleSwitch = React.createClass({
   },
   render() {
     return (
-      <div className={'toggle-bar' + (this.state.on ? ' on' : '')} onClick={this._toggleOn}>
-        <div className='toggle-button' />
-      </div>
+      <label className="toggle" onClick={this._toggleOn}>
+        <div className={'toggle-bar' + (this.state.on ? ' on' : '')}>
+          <div className='toggle-button' />
+        </div>
+        {this.props.children}
+      </label>
     )
   },
   _toggleOn() {

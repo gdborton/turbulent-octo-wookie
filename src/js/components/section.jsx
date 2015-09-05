@@ -3,13 +3,12 @@ var React = require('react');
 var Section = React.createClass({
   render() {
     return (
-      <div>
+      <section>
         <h3>{this.props.title}</h3>
         <div>
           {this.props.children}
         </div>
-        <hr/>
-      </div>
+      </section>
     )
   }
 });
