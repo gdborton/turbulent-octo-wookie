@@ -1,8 +1,15 @@
+@import (reference) 'variables.less';
+
 .new-message-container {
   border-radius: 3px;
   background-color: #dee1e5;
   width: 575px;
   padding: 17px 26px;
+
+  .new-message-container-header {
+    font-size: 16px;
+  }
+
   &:after {
     content: ' ';
     clear: both;
@@ -20,5 +27,17 @@
 
   button {
     float: right;
+  }
+
+  .add-photo {
+    margin-right: 44px;
+    display: inline-block;
+    .button;
+    opacity: .5;
+  }
+
+  .add-video {
+    .button;
+    opacity: .5;
   }
 }
