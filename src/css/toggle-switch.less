@@ -1,0 +1,30 @@
+@import (reference) 'variables.less';
+
+@toggle-height: 25px;
+.toggle-bar {
+  width: @toggle-height * 2;
+  height: @toggle-height;
+  border-radius: @toggle-height / 2;
+  background-color: @inactive-input-color;
+  border: 1px solid @inactive-input-color;
+  position: relative;
+  cursor: pointer;
+
+  .toggle-button {
+    height: @toggle-height - 2;
+    width: @toggle-height - 2;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transition: all .1s ease;
+  }
+
+  &.on {
+    background-color: @normal-input-color;
+    border-color: @normal-input-color;
+    .toggle-button {
+      left: @toggle-height;
+    }
+  }
+}

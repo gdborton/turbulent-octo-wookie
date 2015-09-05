@@ -1,10 +1,11 @@
 var React = require('react');
 var Index = require('./views/index');
+var Settings = require('./views/settings');
 
 var App = React.createClass({
   render() {
     return (
-      <Index/>
+      <Settings/>
     );
   }
 });
