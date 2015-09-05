@@ -10,7 +10,7 @@ var store = _assign({}, EventEmitter.prototype, {
     this.addListener(eventConstants.CHANGE, callback);
   },
 
-  removeChangeListener() {
+  removeChangeListener(callback) {
     this.removeListener(eventConstants.CHANGE, callback);
   },
   getPosts() {

@@ -10,7 +10,7 @@ var Header = React.createClass({
   render() {
     return (
       <div className="header">
-        <img src="/img/logo.png"/>
+        <a href="#/"><img src="/img/logo.png"/></a>
         <div className="header-contents">
           <img className="new-message" src="/img/new-message.png" alt="New Message" onClick={this._showNewMessageModal}/>
         </div>
