@@ -36,15 +36,15 @@ var Posts = React.createClass({
       });
     }
 
-    var renderablePosts = topLevelPosts.map(function(post) {
+    var renderablePosts = topLevelPosts.map((post) => {
       var innerPost = post;
-      innerPost.replies = posts.filter(function(possibleReply) {
+      innerPost.replies = posts.filter((possibleReply) => {
         if (possibleReply.type === 'reply' && possibleReply.replyTo === innerPost.id) {
           return true;
         }
       });
 
-      return <Post post={innerPost} key={innerPost.id}/>;
+      return <Post viewType={this.props.viewType} post={innerPost} key={innerPost.id}/>;
     });
 
     return (

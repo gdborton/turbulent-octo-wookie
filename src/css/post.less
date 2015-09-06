@@ -29,6 +29,14 @@
 
 .post {
   overflow: hidden;
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  max-width: 575px;
+  border: 1px solid rgb(222, 225, 229);
+  border-radius: 4px;
+  margin-top: 25px;
+  margin-right: 20px;
 
   .media-container {
     max-height: 300px;
@@ -40,13 +48,11 @@
     }
   }
 
-  width: 100%;
-  max-width: 575px;
-  border: 1px solid rgb(222, 225, 229);
-  border-radius: 4px;
-
-  margin-top: 25px;
-  margin-right: 25px;
+  @media screen and (min-width: 900px) {
+    &.tile {
+      max-width: 370px;
+    }
+  }
 }
 
 .post-detail-modal {

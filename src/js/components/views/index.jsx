@@ -9,7 +9,8 @@ var OnYourMind = require('../on-your-mind');
 var Index = React.createClass({
   getInitialState() {
     return {
-      selectedTab: 'ALL_POSTS'
+      selectedTab: 'ALL_POSTS',
+      selectedView: 'LIST_VIEW'
     };
   },
   render() {
@@ -36,14 +37,31 @@ var Index = React.createClass({
       return innerTab;
     });
 
+    var buttons = [
+      {
+        classNames: 'icon list-icon',
+        value: 'LIST_VIEW'
+      },
+      {
+        classNames: 'icon tile-icon',
+        value: 'TILE_VIEW'
+      }
+    ];
+
+    buttons.forEach(button => {
+      if (button.value === this.state.selectedView) {
+        button.classNames = button.classNames + ' active';
+      }
+    });
+
     return (
       <div className="container">
         <Hero>
           <OnYourMind/>
-          <SubMenu tabs={tabs} onTabClick={this._handleTabClick}/>
+          <SubMenu tabs={tabs} buttons={buttons} onButtonClick={this._handleButtonClick} onTabClick={this._handleTabClick}/>
         </Hero>
-        <div className="container small">
-          <Posts type={this.state.selectedTab}/>
+        <div className={'container' + (this.state.selectedView === 'LIST_VIEW' ? ' small' : ' medium')}>
+          <Posts type={this.state.selectedTab} viewType={this.state.selectedView}/>
         </div>
       </div>
     );
@@ -51,6 +69,11 @@ var Index = React.createClass({
   _handleTabClick(value) {
     this.setState({
       selectedTab: value
+    });
+  },
+  _handleButtonClick(value) {
+    this.setState({
+      selectedView: value
     });
   }
 });

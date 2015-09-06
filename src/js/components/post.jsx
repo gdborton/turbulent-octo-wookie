@@ -31,7 +31,7 @@ var Post = React.createClass({
     }
 
     return (
-      <div className="post">
+      <div className={'post' + (this.props.viewType === 'TILE_VIEW' ? ' tile' : '')}>
           <PostContent post={this.props.post}/>
           {media}
       </div>

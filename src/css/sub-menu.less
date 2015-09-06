@@ -11,15 +11,32 @@
     display: inline-block;
     margin-right: 30px;
     padding: 10px;
-    font-size: 12px;
+
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bold;
 
+    .tab-title {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
     &.active {
       color: white;
       border-bottom: 4px solid @brand-color;
       padding-bottom: 6px;
+    }
+  }
+
+  .buttons {
+    padding: 8px 0;
+   > * {
+     margin-left: 10px;
+     cursor: pointer;
+   }
+  }
+  @media screen and (max-width: 900px) {
+    .buttons {
+      display: none;
     }
   }
 }
