@@ -5,11 +5,15 @@ var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Index = require('./views/index');
 var Settings = require('./views/settings');
+var Footer = require('./footer');
 
 var App = React.createClass({
   render() {
     return (
-      <RouteHandler/>
+      <div>
+        <RouteHandler/>
+        <Footer/>
+      </div>
     );
   }
 });

@@ -1,0 +1,21 @@
+@import (reference) 'variables.less';
+
+.footer {
+  margin-top: 135px;
+  border-top: 1px solid @background-differentiator;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  * {
+    font-size: 12px;
+    font-wieght: 600;
+    padding: 0 12px;
+    display: inline-block;
+  }
+  a {
+    color: @normal-input-color;
+    &:hover {
+      color: @normal-input-color-hover;
+    }
+  }
+}
