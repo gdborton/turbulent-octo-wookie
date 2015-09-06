@@ -6,8 +6,23 @@
 
   .header-contents {
     float: right;
+    > * {
+      display: inline-block;
+      margin-left: 25px;
+    }
     .new-message {
       cursor: pointer;
+    }
+
+    .fancy-input {
+      background-color: transparent;
+      color: white;
+      &:not(.focus) {
+        border-color: #44474b;
+      }
+      height: 30px;
+      padding: 5px;
+      width: 200px;
     }
   }
 }

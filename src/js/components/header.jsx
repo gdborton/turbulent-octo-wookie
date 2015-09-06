@@ -1,5 +1,7 @@
 var React = require('react');
 var NewMessageModal = require('./new-message-modal');
+var FancyInput = require('./fancy-input');
+
 var Header = React.createClass({
   getInitialState() {
     return {
@@ -13,6 +15,7 @@ var Header = React.createClass({
         <a href="#/"><img src="/img/logo.png"/></a>
         <div className="header-contents">
           <img className="new-message" src="/img/new-message.png" alt="New Message" onClick={this._showNewMessageModal}/>
+          <FancyInput rightContent={<span className="search-icon"/>}/>
         </div>
         {this.state.showingNewMessageModal ? <NewMessageModal onClose={this._closeNewMessageModal}/> : null }
       </div>
