@@ -2,6 +2,21 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    clean: {
+      main: ['dist/']
+    },
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src',
+            src: ['img/*', 'index.html'],
+            dest: 'dist/'
+          }
+        ]
+      }
+    },
     less: {
       compile: {
         files: {
@@ -17,5 +32,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', ['clean', 'less', 'copy']);
 };
