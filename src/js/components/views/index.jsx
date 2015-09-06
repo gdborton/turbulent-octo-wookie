@@ -5,12 +5,10 @@ var Header = require('../header');
 var Posts = require('../posts');
 var SubMenu = require('../sub-menu');
 var OnYourMind = require('../on-your-mind');
-var posts = require('../../mockdata/posts');
 
 var Index = React.createClass({
   getInitialState() {
     return {
-      posts: posts,
       selectedTab: 'ALL_POSTS'
     };
   },
@@ -40,13 +38,12 @@ var Index = React.createClass({
 
     return (
       <div className="container">
-        <Header/>
         <Hero>
           <OnYourMind/>
           <SubMenu tabs={tabs} onTabClick={this._handleTabClick}/>
         </Hero>
         <div className="container small">
-          <Posts posts={this.state.posts} type={this.state.selectedTab}/>
+          <Posts type={this.state.selectedTab}/>
         </div>
       </div>
     );

@@ -15,9 +15,7 @@ var Settings = React.createClass({
 
     return (
       <div>
-        <Header/>
         <div className="small container">
-
           <h1>Settings</h1>
           <Section title="Account">
             <div className="profile-picture-container">
