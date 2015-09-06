@@ -1,6 +1,6 @@
 @normal: 85px;
 @small: 40px;
-
+@extra-small: 30px;
 .profile-picture {
   width: @normal;
   height: @normal;
@@ -20,6 +20,15 @@
     img {
       width: @small;
       height: @small;
+    }
+  }
+
+  &.x-small {
+    width: @extra-small;
+    height: @extra-small;
+    img {
+      width: @extra-small;
+      height: @extra-small;
     }
   }
 }

@@ -1,3 +1,13 @@
+@import (reference) 'variables.less';
+
+.fixafter() {
+  &:after {
+    content: ' ';
+    display:block;
+    clear: both;
+  }
+}
+
 .header {
   padding: 15px 100px;
   background-color: #262728;
@@ -6,6 +16,7 @@
 
   .header-contents {
     float: right;
+    .fixafter();
     > * {
       display: inline-block;
       margin-left: 25px;
@@ -17,12 +28,16 @@
     .fancy-input {
       background-color: transparent;
       color: white;
+      margin-bottom: 0;
       &:not(.focus) {
         border-color: #44474b;
       }
       height: 30px;
       padding: 5px;
       width: 200px;
+    }
+    .profile-menu {
+      float: right;
     }
   }
 }
