@@ -24,7 +24,11 @@ var PostContent = React.createClass({
         <div className="content-body">
           <div className="post-header">
             <span className="author">{this.props.post.author}</span>
-            <button>pretend this is a button</button>
+            <div className="post-icons">
+              <span className="reply-icon icon"/>
+              <span className="heart-icon icon"/>
+              <span>1m</span>
+            </div>
           </div>
           <span className="content">{content}</span>
         </div>
