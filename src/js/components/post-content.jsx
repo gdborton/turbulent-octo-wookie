@@ -16,6 +16,8 @@ var PostContent = React.createClass({
       }
     });
 
+    var expandText = <div className={'expand-button' + (this.props.expanded ? ' expanded': '')}><a onClick={this.props.onClickExpand}>{this.props.expanded ? 'Collapse' : 'Expand'}</a></div>;
+
     return (
       <div className="post-primary-content">
         <div className="profile-picture small">
@@ -31,6 +33,7 @@ var PostContent = React.createClass({
             </div>
           </div>
           <span className="content">{content}</span>
+          {this.props.post.replies && this.props.post.replies.length ? expandText : null}
         </div>
       </div>
     );

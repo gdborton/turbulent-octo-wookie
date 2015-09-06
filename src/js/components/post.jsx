@@ -1,6 +1,7 @@
 var React = require('react');
 var PostDetailModal = require('./post-detail-modal');
 var PostContent = require('./post-content');
+var Reply = require('./reply');
 
 var Post = React.createClass({
   propTypes: {
@@ -14,7 +15,8 @@ var Post = React.createClass({
 
   getInitialState() {
     return {
-      showingPhotoDetail: false
+      showingPhotoDetail: false,
+      showingReplies: false
     }
   },
 
@@ -30,10 +32,22 @@ var Post = React.createClass({
       );
     }
 
+    var replies = this.props.post.replies.map((reply, index) => {
+      return (
+        <div className="reply-post" key={index}>
+          <PostContent post={reply}/>
+        </div>
+      );
+    });
+    replies.push(
+        <Reply/>
+    );
+
     return (
       <div className={'post' + (this.props.viewType === 'TILE_VIEW' ? ' tile' : '')}>
-          <PostContent post={this.props.post}/>
+          <PostContent post={this.props.post} onClickExpand={this.toggleShowingReplies} expanded={this.state.showingReplies}/>
           {media}
+          {this.state.showingReplies ? replies : null}
       </div>
     );
   },
@@ -45,6 +59,11 @@ var Post = React.createClass({
   hidePhotoDetail() {
     this.setState({
       showingPhotoDetail: false
+    });
+  },
+  toggleShowingReplies() {
+    this.setState({
+      showingReplies: !this.state.showingReplies
     });
   }
 });

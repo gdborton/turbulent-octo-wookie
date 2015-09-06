@@ -1,5 +1,7 @@
 @import (reference) 'variables.less';
 
+@post-border-color: #eef0f2;
+
 .post-primary-content {
   .clearafter();
   padding: 25px;
@@ -35,6 +37,30 @@
   * {
     vertical-align: top;
   }
+
+  .expand-button {
+    margin-top: 27px;
+    cursor: pointer;
+    position: relative;
+    &.expanded:after {
+      border-top: none;
+      border-bottom: 4px solid @normal-input-border-color;
+    }
+    &:after {
+      content: ' ';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      display: inline-block;
+      margin-left: 10px;
+      border-top: 4px solid @normal-input-border-color;
+      transform: translateY(-100%);
+    }
+    > * {
+      font-size: 12px;
+    }
+  }
 }
 
 .post {
@@ -47,6 +73,10 @@
   border-radius: 4px;
   margin-top: 25px;
   margin-right: 20px;
+  .reply-post {
+    background-color: #f9fafb;
+    border-top: 1px solid @post-border-color;
+  }
 
   .media-container {
     max-height: 300px;
@@ -76,7 +106,7 @@
 
 .reply {
   background-color: #f9fafb;
-  border-top: 1px solid #eef0f2;
+  border-top: 1px solid @post-border-color;
   padding: 16px 25px;
 
   input {
