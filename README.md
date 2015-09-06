@@ -1,5 +1,18 @@
 # Simply Social
 
+## Running the app
+
+Everything needed should be included in the repository.  Assuming that you have node/npm installed, the below should be all you need to run the app on port 3001.
+
+```bash
+git clone git@github.com:gdborton/turbulent-octo-wookie.git
+cd turbulent-octo-wookie
+npm install
+node app.js
+```
+
+In the event that something doesn't work, I've predeployed the application to heroku, and you can see it (here)[https://simplysocial-gary.herokuapp.com/#/].
+
 ## Inferences
 
 These are the sorts of things that I'd normally work with ux to figure out.  Below are some assumptions that I made since I don't have a direct line of communication with the team that made the prototypes.
