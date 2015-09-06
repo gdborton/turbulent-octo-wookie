@@ -1,6 +1,7 @@
 @import (reference) 'variables.less';
 
 .new-message-container {
+  .clearafter();
   border-radius: 3px;
   background-color: @background-differentiator;
   width: 575px;
@@ -10,11 +11,6 @@
     font-size: 16px;
   }
 
-  &:after {
-    content: ' ';
-    clear: both;
-    display: block;
-  }
   textarea {
     width: 100%;
     max-width: 100%;
