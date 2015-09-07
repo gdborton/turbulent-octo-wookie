@@ -11,7 +11,7 @@ npm install
 node app.js
 ```
 
-In the event that something doesn't work, I've predeployed the application to heroku, and you can see it (here)[https://simplysocial-gary.herokuapp.com/#/].
+In the event that something doesn't work, I've predeployed the application to heroku, and you can see it [here](https://simplysocial-gary.herokuapp.com/#/).
 
 ## Inferences
 
