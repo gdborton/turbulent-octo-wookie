@@ -9,7 +9,7 @@ var RadioSwitches = React.createClass({
   render() {
     var inputs = this.props.options.map((option, index) => {
       return (
-        <label onClick={this.setSelected.bind(this, option)}>
+        <label key={index} onClick={this.setSelected.bind(this, option)}>
           <div className="radio">
             <div className={'radio-inner' + (option === this.state.selected ? ' checked' : '')}></div>
           </div>
