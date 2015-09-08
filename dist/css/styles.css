@@ -464,6 +464,7 @@ a {
 }
 .header .header-contents .fancy-input input {
   color: white;
+  background-color: rgba(0, 0, 0, 0);
 }
 .header .header-contents .profile-menu {
   float: right;
