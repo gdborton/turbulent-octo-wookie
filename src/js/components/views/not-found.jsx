@@ -12,7 +12,7 @@ var NotFound = React.createClass({
           Hopefully you can enjoy this relevant 1987 music video, as much as the content you expected to see.
         </p>
         <h2>Rick Astley's "Never Gonna Give You Up"</h2>
-        <iframe width="480" height="360" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="360" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameBorder="0" allowFullScreen></iframe>
       </div>
     );
   }
