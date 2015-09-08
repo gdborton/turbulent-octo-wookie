@@ -7,13 +7,15 @@ var PostContent = React.createClass({
   render() {
     var content = this.props.post.content.split(' ');7
     content = content.map(function(word, index) {
+      var innerContent;
       if (urlRegex.test(word)) {
-        return <span><a href={word.indexOf('http') === -1 ? 'https://' + word : word} key={index}>{word}</a> </span>;
+        innerContent = <a href={word.indexOf('http') === -1 ? 'https://' + word : word} key={index}>{word}</a>;
       } else if(twitterHandleRegex.test(word)) {
-        return <span><a href={'https://twitter.com/' + word.match(twitterHandleRegex)[0].replace(/@/, '')} key={index}>{word}</a></span>
+        innerContent = <a href={'https://twitter.com/' + word.match(twitterHandleRegex)[0].replace(/@/, '')} key={index}>{word}</a>;
       } else {
-        return word + ' ';
+        innerContent = word + ' ';
       }
+      return <span key={index}>{innerContent}</span>
     });
 
     var expandText = <div className={'expand-button' + (this.props.expanded ? ' expanded': '')}><a onClick={this.props.onClickExpand}>{this.props.expanded ? 'Collapse' : 'Expand'}</a></div>;

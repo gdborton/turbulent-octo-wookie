@@ -1,10 +1,7 @@
 var webpack = require('webpack');
-var port = process.env.PORT || 3001;
-var address = 'http://localhost:' + port;
-var entries = ['webpack-dev-server/client?' + address, 'webpack/hot/dev-server'];
 var config = {
     entry: {
-        game: entries.concat('./src/js/components/app.jsx')
+        game: './src/js/components/app.jsx'
     },
     debug: true,
     devtool: 'source-map',

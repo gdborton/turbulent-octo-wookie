@@ -2,15 +2,15 @@ var React = require('react');
 
 var SubMenu = React.createClass({
   propTypes: {
-    tabs: React.PropTypes.arrayOf({
+    tabs: React.PropTypes.arrayOf(React.PropTypes.shape({
       title: React.PropTypes.string.isRequired,
       value: React.PropTypes.string.isRequired,
       isActive: React.PropTypes.bool
-    }).isRequired,
-    buttons: React.PropTypes.arrayOf({
+    })).isRequired,
+    buttons: React.PropTypes.arrayOf(React.PropTypes.shape({
       classNames: React.PropTypes.string.isRequired,
       value: React.PropTypes.string.isRequired
-    }),
+    })),
     onTabClick: React.PropTypes.func.isRequired,
     onButtonClick: React.PropTypes.func.isRequired
   },
