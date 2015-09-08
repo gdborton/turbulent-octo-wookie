@@ -643,6 +643,7 @@ a {
   text-align: initial;
 }
 .modal-node .modal-backdrop .modal-contents {
+  text-align: left;
   position: relative;
 }
 .modal-node .modal-backdrop .modal-contents .close-icon {
@@ -683,7 +684,6 @@ button:active {
   background-color: #00b286;
 }
 .new-message-container {
-  text-align: left;
   border-radius: 3px;
   background-color: #dee1e5;
   width: 575px;
