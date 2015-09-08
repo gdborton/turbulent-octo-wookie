@@ -236,6 +236,7 @@ th {
   margin-left: 10px;
   border-top: 4px solid #bec3cc;
   transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
 }
 .post-primary-content .expand-button > * {
   font-size: 12px;
@@ -525,6 +526,7 @@ a {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 .on-your-mind input {
   font-weight: 300;
@@ -843,6 +845,7 @@ section .account-settings {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 .profile-menu.open .profile-menu-options {
   display: block;
@@ -876,6 +879,7 @@ section .account-settings {
   position: absolute;
   left: 30px;
   transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
 }
 .profile-menu .profile-menu-options li {
   list-style: none;
