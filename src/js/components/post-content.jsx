@@ -5,7 +5,7 @@ var twitterHandleRegex = /^@(\w){1,15}/;
 
 var PostContent = React.createClass({
   render() {
-    var content = this.props.post.content.split(' ');7
+    var content = this.props.post.content.split(' ');
     content = content.map(function(word, index) {
       var innerContent;
       if (urlRegex.test(word)) {
